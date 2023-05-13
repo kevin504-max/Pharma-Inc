@@ -1,4 +1,4 @@
-const { Users } = require('../models/User');
+const { Users } = require('../models/Users');
 
 module.exports = class UserService {
     constructor () {

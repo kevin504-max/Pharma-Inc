@@ -1,5 +1,5 @@
 const { UserService } = require('../services');
-const UserService = new UserService();
+const userService = new UserService();
 const usersJSON = require('../users.json');
 
 module.exports = class UserController {
@@ -7,11 +7,11 @@ module.exports = class UserController {
         try {
             const users = this.getUsersFromJSON(usersJSON);
             const usersParams = { users: users };
-            const usersRegistered = await UserService.getUsers();
+            const usersRegistered = await userService.getUsers();
 
             this.verifyUsersRegistered(usersRegistered);
 
-            await UserService.registerUsers(usersParams);
+            await userService.registerUsers(usersParams);
             return response.status(200).json({ message: 'Usuários registrados com sucesso!' });
         } catch (error) {
             console.error(`Error: ${error}`);
@@ -21,7 +21,7 @@ module.exports = class UserController {
 
     getUsers = async (request, response) => {
         try {
-            const users = await UserService.getUser();
+            const users = await userService.getUser();
 
             if (!users) {
                 return response.status(404).json({ message: 'Nenhum usuário foi encontrado...' });                
@@ -36,7 +36,7 @@ module.exports = class UserController {
 
     findUser = async (request, response) => {
         try {
-            const user = await UserService.findUser(request.params.userId);
+            const user = await userService.findUser(request.params.userId);
 
             if (!user) {
                 return response.status(404).json({ message: 'Nenhum usuário foi encontrado...' });
@@ -52,7 +52,7 @@ module.exports = class UserController {
     updateUser = async (request, response) => {
         try {
             const updateParams = { userId: Number(request.params.userId), userUpdate: request.body };
-            const userUpdated = await UserService.updateUser(updateParams);
+            const userUpdated = await userService.updateUser(updateParams);
 
             if (!userUpdated) {
                 return response.status(404).json({ message: 'Nenhum usuário foi encontrado...' });
@@ -67,7 +67,7 @@ module.exports = class UserController {
 
     removeUser = async (request, response) => {
         try {
-            const userRemoved = await UserService.removeUser(request.params.userId);
+            const userRemoved = await userService.removeUser(request.params.userId);
 
             if (!userRemoved) {
                 return response.status(404).json({ message: 'Nenhum usuário foi encontrado...' });

@@ -28,7 +28,7 @@ class ApiServer {
         await this.restApiConfiguration();
     }
 
-    getApplication = async () => {
+    getApplication = () => {
         return this.app;
     }
 }
