@@ -7,7 +7,7 @@ async function connect() {
             useUnifiedTopology: true,
             useFindAndModify: false
         }).then(() => {
-            console.log('Connected to database successfully!');
+            console.log('Conexão com o Banco de Dados efetuada com sucesso!');
         })
     } catch (error) {
         console.log(`Error: ${error}`);

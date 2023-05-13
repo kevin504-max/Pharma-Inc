@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 
-class ApiService {
+class ApiServer {
     constructor () {
 
     }
@@ -28,9 +28,9 @@ class ApiService {
         await this.restApiConfiguration();
     }
 
-    startApplication = async () => {
+    getApplication = async () => {
         return this.app;
     }
 }
 
-module.exports = ApiService;
+module.exports = ApiServer;
