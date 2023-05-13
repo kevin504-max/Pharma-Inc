@@ -12,25 +12,31 @@ const UserSchema = new Schema({
         }
     },
     location: {
-        type: {
-            street: { type: String },
-            city: { type: String },
-            state: { type: String },
-            postcode: { type: String },
-            coordinates: {
+		type: {
+			street: { 
                 type: {
-                    latitude: { type: String },
-                    longitude: { type: String }
-                }
+                    number: { type: Number },
+                    name: { type: String }
+                } 
             },
-            timezone: {
-                type: {
-                    offset: { type: String },
-                    description: { type: String }
-                }
-            }
-        }
-    },
+			city: { type: String },
+			state: { type: String },
+            country: { type: String },
+			postcode: { type: String },
+			coordinates: {
+				type: {
+					latitude: { type: String },
+					longitude: { type: String },
+				}
+			},
+			timezone: {
+				type: {
+					offset: { type: String },
+					description: { type: String },
+				}
+			}
+		}
+	},
     email: { type: String },
     login: {
         type: {
