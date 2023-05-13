@@ -13,3 +13,5 @@ async function connect() {
         console.log(`Error: ${error}`);
     }
 }
+
+module.exports = { connect };

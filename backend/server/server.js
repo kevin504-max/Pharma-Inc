@@ -17,7 +17,7 @@ class ApiServer {
         app.use(cors({ origin: true, credentials: true }));
         app.use(express.json());
         app.use(express.urlencoded({ extended: false }));
-        app.use('/v1/', require('../routes/usersRoutes'));
+        app.use('/api/', require('../routes/usersRoutes'));
         app.get('/', (request, response) => {
             response.status(200).json({ message: 'REST Fullstack Challenge 20201209 Running' })
         });

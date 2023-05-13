@@ -3,7 +3,7 @@ const ApiServer = require('./server/server');
 const startApplication = async () => {
     try {
         const config = require('./config/config.json');
-        const mongoose = require('mongoose');
+        const mongoose = require('./database/databaseConnection');
         const apiServer = new ApiServer();
         
         apiServer.initialize().then(() => {

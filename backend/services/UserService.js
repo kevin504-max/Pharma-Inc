@@ -1,5 +1,4 @@
 const { Users } = require('../models/Users');
-
 module.exports = class UserService {
     constructor () {
 
@@ -19,7 +18,7 @@ module.exports = class UserService {
 
     getUsers = async () => {
         try {
-            return await Users.findAll();
+            return await Users.find();
         } catch (error) {
             console.error(`Error: ${error}`);
             throw `Error: ${error}`;

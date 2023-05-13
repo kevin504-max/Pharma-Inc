@@ -21,7 +21,7 @@ module.exports = class UserController {
 
     getUsers = async (request, response) => {
         try {
-            const users = await userService.getUser();
+            const users = await userService.getUsers();
 
             if (!users) {
                 return response.status(404).json({ message: 'Nenhum usuário foi encontrado...' });                
