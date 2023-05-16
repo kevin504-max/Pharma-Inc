@@ -23,13 +23,13 @@
                             value="username"
                             v-b-tooltip.hover
                             title="Filtrar por nome"
-                            class="mr-2 radio"
+                            class="mr-2"
                         >Usuário</b-form-radio>
                         <b-form-radio
                             value="nationality"
                             v-b-tooltip.hover
                             title="Filtrar por nacionalidade"
-                            class="mr-2 radio"
+                            class="mr-2"
                         >Nacionalidade</b-form-radio>
                     </b-form-radio-group>
                 </b-form-group>
@@ -54,7 +54,7 @@
                             v-model="currentPage"
                             :total-rows="totalRows"
                             :per-page="perPage"
-                            v-if="totalRows > 2"
+                            v-if="totalRows > 3"
                             align="fill"
                             size="sm"
                             class="my-0"
@@ -476,9 +476,9 @@ export default {
             selected: "username",
             sort: "ASC",
             genders: [
-                { value: "Masculino", text: "Masculino" },
-                { value: "Feminino", text: "Feminino" },
-                { value: "Outro", text: "Outro" },
+                { value: "male", text: "male" },
+                { value: "female", text: "female" },
+                { value: "outro", text: "outro" },
             ],
             filterSearch: "",
             gender: "",
@@ -521,13 +521,13 @@ export default {
                 {
                     key: "birthday",
                     label: "Aniversário",
-                    thStyle: { width: "200px" },
+                    thStyle: { width: "30%" },
                 },
                 {
                     key: "update",
                     label: "Atualizar",
                     sortable: false,
-                    thStyle: { width: "100px" },
+                    thStyle: { width: "5%" },
                 }
             ],
             isLoading: false,
@@ -643,7 +643,7 @@ export default {
                     this.isLoading = false;
                     this.updateUserState = false;
                     this.$nextTick(() => {
-                        this.$refs.modal.hide();
+                        this.$refs.modalDetailsUpdate.hide();
                     });
                 }
             } catch (error) {

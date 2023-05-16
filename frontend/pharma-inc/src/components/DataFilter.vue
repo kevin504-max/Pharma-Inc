@@ -23,7 +23,8 @@ export default {
             userIcon,
             options: [
                 "male",
-                "female"
+                "female",
+                "outro"
             ],
             gender: "",
             filterSearch: ""

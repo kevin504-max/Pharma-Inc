@@ -44,6 +44,14 @@ async function updateUser(user) {
     }
 }
 
+async function removeUser(userId) {
+    try {
+        return await axios.delete(`http://localhost:3300/api/users/${userId}`);
+    } catch (error) {   
+        console.error(`Error: ${error}`);
+    }
+}
+
 function getAge(birth) {
     const now = new Date();
     const birthDate = new Date(dateString2Date(birth));
@@ -63,12 +71,4 @@ function dateString2Date(date) {
     const dateArray = date.split('/');
     
     return new Date([dateArray[1], dateArray[0], dateArray[2]]);
-}
-
-async function removeUser(userId) {
-    try {
-        return await axios.delete(`http://localhost:3300/api/users/${userId}`);
-    } catch (error) {   
-        console.error(`Error: ${error}`);
-    }
 }
