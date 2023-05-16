@@ -33,7 +33,7 @@
                         >Nacionalidade</b-form-radio>
                     </b-form-radio-group>
                 </b-form-group>
-                <DataFilter @onUpdatedFilterSearch="updatedFilterSearch($event)"></DataFilter>
+                <DataFilter @onUpdatedFilterSearch="updatedFilterSearch($event)" @onUpdatedFilterGender="updatedFilterGender($event)"></DataFilter>
                 <div>
                     <b-table 
                         striped
@@ -481,6 +481,7 @@ export default {
                 { value: "Outro", text: "Outro" },
             ],
             filterSearch: "",
+            gender: "",
             submitted: false,
             updateUserState: false,
             nationalities: [],
@@ -552,6 +553,8 @@ export default {
                     return user.fullName.includes(this.filterSearch) || 
                         user.fullName.toLowerCase().includes(this.filterSearch) ||
                         user.fullName.toUpperCase().includes(this.filterSearch);
+                } else if (this.selected === "gender") {
+                    return (user.gender === this.gender);
                 } else {
                     return user;
                 }
@@ -577,6 +580,11 @@ export default {
 
         updatedFilterSearch(event) {
             this.filterSearch = event;
+        },
+
+        updatedFilterGender(event) {
+            this.selected = "gender";
+            this.gender = event;
         },
 
         checkNumber(event) {
