@@ -1,23 +1,23 @@
 <template>
-<div class="fixed pin-t pin-x z-40">
+  <div class="fixed pin-t pin-x z-40">
     <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
-        <div class="flex flex-no-shrink items-center">
-            <a class="flex flex-no-shrink items-center text-black mx-4">
-                <img src="@/assets/logo.png" alt="Pharma Inc" class="img-fluid m-2" width="100">
-                <span class="company d-inline-block font-semibold mx-1">Pharma Inc</span>
-            </a>
-            <img src="@/assets/default-avatar.jpg" alt="image" class="img-fluid img-circle float-end m-3" width="60">
-        </div>
+      <div class="flex flex-no-shrink items-center">
+        <a class="flex flex-no-shrink items-center text-black mx-4">
+          <img src="@/assets/logo.png" alt="Pharma Inc" class="img-fluid m-2" width="100">
+          <span class="company d-inline-block font-semibold mx-1">Pharma Inc</span>
+        </a>
+        <img src="@/assets/default-avatar.jpg" alt="image" class="img-fluid img-circle float-right m-3" width="60">
+      </div>
     </nav>
-</div>
+  </div>
 </template>
 
 <script>
 
 export default {
-    name: 'HeaderPage',
-    components: {
-    }
+  name: 'HeaderPage',
+  components: {
+  }
 }
 </script>
 
@@ -42,12 +42,13 @@ export default {
 
 .bg-navbar {
   background-color: #B4F8C8;
+  opacity: 0.8;
 }
 
 .company {
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    color: #37bb5f;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: #69bb82;
 }
 
 .flex-no-shrink {
@@ -59,7 +60,7 @@ export default {
 }
 
 .img-circle {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 </style>

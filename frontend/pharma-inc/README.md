@@ -1,4 +1,4 @@
-# pharma-inc
+# project-users
 
 ## Project setup
 ```

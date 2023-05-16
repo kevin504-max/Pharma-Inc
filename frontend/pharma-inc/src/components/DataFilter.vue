@@ -1,23 +1,23 @@
 <template>
-    <div class="search-wrapper">
-        <img />
-        <b-form-input @input="search()" v-model="searchText" placeholder="Digite aqui..."></b-form-input>
+    <div class="search-wrapper m-3">
+        <img :src="searchIcon" alt="icon" />
+        <b-form-input @input="search()" v-model="filterSearch" placeholder="Digite aqui..."></b-form-input>
     </div>
 </template>
 
 <script>
-import faSearch from "@fortawesome/free-solid-svg-icons";
+import searchIcon from "@/assets/icons/magnify.svg";
 
 export default {
-    data () {
+    data() {
         return {
-            faSearch,
-            searchText: ""
+            searchIcon,
+            filterSearch: ""
         };
     },
     methods: {
         search() {
-            this.$emit("onSearchTextChanged", this.searchText);
+            this.$emit("onUpdatedFilterSearch", this.filterSearch);
         }
     }
 };
@@ -35,9 +35,8 @@ export default {
     width: 300px;
 }
 
-.serach-wrapper .form-control[type="text"]:focus {
+.search-wrapper .form-control[type="text"]:focus {
     box-shadow: none;
     border-color: #b9b9b9 !important;
 }
-
 </style>

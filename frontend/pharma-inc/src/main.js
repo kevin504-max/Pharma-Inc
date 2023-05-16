@@ -1,19 +1,19 @@
-import { createApp } from 'vue'
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+import Vue from 'vue'
 import Vuelidate from 'vuelidate'
 import VueToast from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
-import vuetify from './plugins/vuetify';
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import UsersPage from './UsersPage.vue'
 
-const app = createApp(UsersPage)
-app.config.productionTip = false
-app.use(BootstrapVue)
-app.use(BootstrapVueIcons)
-app.use(Vuelidate)
-app.use(VueToast)
-app.use(vuetify)
+Vue.config.productionTip = false
+Vue.use(Vuelidate)
+Vue.use(VueToast)
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
 
-app.mount('#app')
+new Vue({
+  el: '#app',
+  render: h => h(UsersPage),
+})
