@@ -1,0 +1,36 @@
+# Arquivos de compilação
+*.o
+*.out
+*.log
+
+# Arquivos e diretórios gerados por IDEs e editores de texto
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*~
+
+# Arquivos de dependências
+/node_modules
+/bower_components
+
+# Arquivos gerados durante a execução
+/dist
+/build
+/.cache
+.DS_Store
+
+# Arquivos de configuração sensíveis
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
